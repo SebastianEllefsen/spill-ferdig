@@ -1,23 +1,30 @@
-/* Import Google Font - Poppins */
+/* Importer Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Nullstill standardstiler og sett fontfamilie */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+/* Oppsett av grunnleggende styling for body */
 body{
   display: flex;
   padding: 0 10px;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
- 
 }
+
+/* Definer farge for utvalg */
 ::selection{
   color: #fff;
   background: #17A2B8;
 }
+
+/* Opprett en wrapper for hovedinnholdet */
 .wrapper{
   width: 770px;
   padding: 35px;
@@ -25,45 +32,62 @@ body{
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0,0,0,0.05);
 }
+
+/* Stil skjult input-felt */
 .wrapper .input-field{
   opacity: 0;
   z-index: -999;
   position: absolute;
 }
+
+/* Stil innholdsboksen innenfor wrapperen */
 .wrapper .content-box{
   padding: 13px 20px 0;
   border-radius: 10px;
   border: 1px solid #bfbfbf;
 }
+
+/* Stil tekstområdet for skriving */
 .content-box .typing-text{
   overflow: hidden;
   max-height: 256px;
 }
+
+/* Skjul rullefeltet for skrivingsteksten */
 .typing-text::-webkit-scrollbar{
   width: 0;
 }
+
+/* Stil avsnitt innenfor skrivingsteksten */
 .typing-text p{
   font-size: 21px;
   text-align: justify;
   letter-spacing: 1px;
   word-break: break-all;
 }
+
+/* Stil spans innenfor avsnitt for forskjellige tilstander */
 .typing-text p span{
   position: relative;
 }
+
 .typing-text p span.correct{
   color: #56964f;
 }
+
 .typing-text p span.incorrect{
   color: #cb3439;
   outline: 1px solid #fff;
   background: #ffc0cb;
   border-radius: 4px;
 }
+
 .typing-text p span.active{
   color: #17A2B8;
 }
+
 .typing-text p span.active::before{
+  /* Opprett en blinkeanimasjon for aktiv span */
   position: absolute;
   content: "";
   height: 2px;
@@ -75,12 +99,15 @@ body{
   background: #17A2B8;
   animation: blink 1s ease-in-out infinite;
 }
-/* lager en blinke animasjon på der du er i teksten */
+
+/* Definer blinkeanimasjonen */
 @keyframes blink{
   50%{ 
     opacity: 1; 
   }
 }
+
+/* Stil innholdsseksjonen */
 .content-box .content{
   margin-top: 17px;
   display: flex;
@@ -90,6 +117,8 @@ body{
   justify-content: space-between;
   border-top: 1px solid #bfbfbf;
 }
+
+/* Stil knapper innenfor innholdet */
 .content button{
   outline: none;
   border: none;
@@ -102,9 +131,12 @@ body{
   background: #17A2B8;
   transition: transform 0.3s ease;
 }
+
 .content button:active{
   transform: scale(0.97);
 }
+
+/* Stil detaljene for resultatet */
 .content .result-details{
   display: flex;
   flex-wrap: wrap;
@@ -112,6 +144,8 @@ body{
   width: calc(100% - 140px);
   justify-content: space-between;
 }
+
+/* Stil listeelementene innenfor resultatsdetaljene */
 .result-details li{
   display: flex;
   height: 20px;
@@ -119,24 +153,31 @@ body{
   position: relative;
   align-items: center;
 }
+
 .result-details li:not(:first-child){
   padding-left: 22px;
   border-left: 1px solid #bfbfbf;
 }
+
 .result-details li p{
   font-size: 19px;
 }
+
 .result-details li span{
   display: block;
   font-size: 20px;
   margin-left: 10px;
 }
+
 li span b{
   font-weight: 500;
 }
+
 li:not(:first-child) span{
   font-weight: 500;
 }
+
+/* Medieforespørsel for mindre skjermer (maks bredde: 745px) */
 @media (max-width: 745px) {
   .wrapper{
     padding: 20px;
@@ -169,6 +210,8 @@ li:not(:first-child) span{
     font-size: 17px;
   }
 }
+
+/* Medieforespørsel for enda mindre skjermer (maks bredde: 518px) */
 @media (max-width: 518px) {
   .wrapper .content-box{
     padding: 10px 15px 0;
